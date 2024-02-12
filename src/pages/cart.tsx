@@ -17,7 +17,7 @@ const Cart = () => {
     const [couponCode, setCouponCode] = useState<string>("");
     const [isValidCouponCode, setIsValidCouponCode] = useState<boolean>(false);
 
-    const { cartItems, subtotal, tax, total, shippingCharges, discount } =
+    const { cartItems, subTotal, tax, total, shippingCharges, discount } =
         useSelector((state: RootState) => state.cartReducer);
 
     const dispatch = useDispatch();
@@ -86,7 +86,7 @@ const Cart = () => {
             </main>
 
             <aside>
-                <p>Subtotal: ₹{subtotal}</p>
+                <p>Subtotal: ₹{subTotal}</p>
                 <p>Shipping Charges: ₹{shippingCharges}</p>
                 <p>Tax: ₹{tax}</p>
                 <p>

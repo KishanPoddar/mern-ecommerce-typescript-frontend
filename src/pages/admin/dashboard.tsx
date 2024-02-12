@@ -136,7 +136,7 @@ const Dashboard = () => {
                                     <BiMaleFemale />
                                 </p>
                             </div>
-                            <Table data={stats?.latestTransation} />
+                            <Table data={stats?.latestTransation!} />
                         </section>
                     </>
                 )}

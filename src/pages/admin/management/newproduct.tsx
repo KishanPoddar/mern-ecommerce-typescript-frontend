@@ -12,8 +12,8 @@ const NewProduct = () => {
 
     const [name, setName] = useState<string>("");
     const [category, setCategory] = useState<string>("");
-    const [price, setPrice] = useState<number>();
-    const [stock, setStock] = useState<number>();
+    const [price, setPrice] = useState<number>(0);
+    const [stock, setStock] = useState<number>(0);
     const [photoPrev, setPhotoPrev] = useState<string>("");
     const [photo, setPhoto] = useState<File>();
 
@@ -46,7 +46,9 @@ const NewProduct = () => {
         formData.set("category", category);
         formData.set("price", price.toString());
         formData.set("stock", stock.toString());
-        formData.set("photo", photo);
+		if (photo) {
+            formData.set("photo", photo);
+        }
 
         const res = await newProduct({ id: user?._id as string, formData });
 
